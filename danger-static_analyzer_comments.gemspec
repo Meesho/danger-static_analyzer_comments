@@ -1,22 +1,22 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require '${PLUGIN_FILE}/gem_version.rb'
+require 'version'
 
 Gem::Specification.new do |spec|
-  spec.name          = '${PLUGIN_NAME}'
-  spec.version       = ${PLUGIN_MODULE}::VERSION
-  spec.authors       = ['${USER_NAME}']
-  spec.email         = ['${USER_EMAIL}']
-  spec.description   = %q{A short description of ${PLUGIN_NAME}.}
-  spec.summary       = %q{A longer description of ${PLUGIN_NAME}.}
-  spec.homepage      = 'https://github.com/${USER_NAME}/${PLUGIN_NAME}'
-  spec.license       = 'MIT'
+  spec.name = 'danger-static_analyzer_comments'
+  spec.version = DangerStaticAnalyzerComments::VERSION
+  spec.authors = ['Vibin Reddy']
+  spec.email = ['vibin@meesho.com']
+  spec.description = %q{A Danger plugin which turns static analyzers' output into inline Github comments}
+  spec.summary = %q{A Danger plugin which turns static analyzers' output into inline Github comments}
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files = `git ls-files`.split($/)
+  spec.executables = spec.files.grep(%r{^bin/}) {|f| File.basename(f)}
+  spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
+
+  spec.add_dependency 'oga'
 
   spec.add_runtime_dependency 'danger-plugin-api', '~> 1.0'
 
@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.4'
 
   # Linting code and docs
-  spec.add_development_dependency "rubocop"
-  spec.add_development_dependency "yard"
+  spec.add_development_dependency "rubocop", "~> 0.49.0"
+  spec.add_development_dependency "yard", "~> 0.9.11"
 
   # Makes testing easy via `bundle exec guard`
   spec.add_development_dependency 'guard', '~> 2.14'

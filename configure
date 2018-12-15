@@ -55,12 +55,12 @@ module Pod
         'PLUGIN_LICENSE.txt',
         'PLUGIN_README.md',
         'Gemfile',
-        'PLUGIN.gemspec.template',
-        'lib/PLUGIN.rb',
-        'lib/PLUGIN/gem_version.rb',
+        'static_analyzer_comments.gemspec',
+        'lib/static_analyzer_comments.rb',
+        'lib/static_analyzer_comments/gem_version.rb',
         'lib/danger_plugin.rb',
-        'lib/PLUGIN/plugin.rb',
-        'spec/PLUGIN_spec.rb'
+        'lib/static_analyzer_comments/plugin.rb',
+        'spec/static_analyzer_comments_spec.rb'
       ]
 
       file_names.each do |file_name|
@@ -82,10 +82,10 @@ module Pod
     def rename_template_files
       `mv PLUGIN_LICENSE.txt LICENSE.txt`
       `mv PLUGIN_README.md README.md`
-      `mv PLUGIN.gemspec.template #{plugin_name}.gemspec`
-      `mv lib/PLUGIN.rb lib/danger_#{plugin_file}.rb`
-      `mv lib/PLUGIN lib/#{plugin_file}`
-      `mv spec/PLUGIN_spec.rb spec/#{plugin_file}_spec.rb`
+      `mv static_analyzer_comments.gemspec #{plugin_name}.gemspec`
+      `mv lib/static_analyzer_comments.rb lib/danger_#{plugin_file}.rb`
+      `mv lib/static_analyzer_comments lib/#{plugin_file}`
+      `mv spec/static_analyzer_comments_spec.rb spec/#{plugin_file}_spec.rb`
     end
 
     def reinitialize_git_repo
