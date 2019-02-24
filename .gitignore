@@ -1,0 +1,80 @@
+# read http://stackoverflow.com/a/8527650/1852422
+# https://stackoverflow.com/questions/11968531/what-to-gitignore-from-the-idea-folder
+
+# generated files
+bin/
+build/
+*.ap_
+
+# Local configuration file (sdk path, etc.)
+local.properties
+
+# Java class files
+*.class
+
+# User-specific (aka high-churn) files
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/dictionaries
+**/.idea/vcs.xml
+**/.idea/shelf
+**/.idea/runConfigurations/
+**/.idea/runConfigurations.xml
+**/.idea/jsLibraryMappings.xml
+**/.idea/caches/
+*.iml
+.navigation
+**/.idea/assetWizardSettings.xml
+**/.idea/misc.xml
+
+# Statistic plugin
+**/.idea/statistic.xml
+
+# Gradle:
+**/.idea/gradle.xml
+**/.idea/libraries
+.gradle
+
+# Sensitive or high-churn files
+**/.idea/dataSources.ids
+**/.idea/dataSources.xml
+**/.idea/dataSources.local.xml
+**/.idea/sqlDataSources.xml
+**/.idea/dynamic.xml
+**/.idea/uiDesigner.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+/out/
+
+.externalNativeBuild
+
+# AS' Layout Inspector files
+*/captures
+
+# OS X junk
+.DS_Store
+
+# files for the dex VM
+*.dex
+
+# woof woof!
+doge.jp[e]g
+
+## Ruby environment normalization
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalization:
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
